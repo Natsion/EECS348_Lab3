@@ -5,6 +5,21 @@ main ()
 {
   float values[12], sum, max, min, t = 0;
   int i, j;
+  char * months[12] = {
+      "January",
+      "Febuary",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+  };
+  
   char min_month, max_month;
 
   printf ("Enter the sales for the year:\n\n");
@@ -14,7 +29,10 @@ main ()
       sum += values[i];
     }
 
-
+    for (i = 0; i < 12; i++)
+    {
+      printf ("\n%s %.2f", months[i], values[i]);
+    }
   max = values[0];
   min = values[0];
 
@@ -30,8 +48,8 @@ main ()
 	{
 	  min = values[i];
 	}
-    }
-  printf ("\nMinimum Sales: %.2f \n", min);
+  }
+  printf ("\n\nMinimum Sales: %.2f \n", min);
   printf ("Maximum Sales: %.2f\n", max);
   printf ("Average Sales: %.2f\n\n", (sum / 12));
 
@@ -120,7 +138,7 @@ main ()
   for (i = 0; i < 12; i++)
     {
 
-      printf ("\n%.2f", values[i]);
+      printf ("\n%s %.2f", months[i], values[i]);
     }
 
 }
