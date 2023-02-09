@@ -4,6 +4,7 @@ void
 main ()
 {
   float values[12], sum, max, min, t = 0;
+  char * t2;
   int i, j;
   char * months[12] = {
       "January",
@@ -122,6 +123,8 @@ main ()
   //-----------------------------------------------------------
 
   printf ("\n\nSales Report (Highest to Lowest): \n");
+  
+  
   for (i = 0; i < 12; i++)
     {
       for (j = i + 1; j < 12; j++)
@@ -130,14 +133,16 @@ main ()
 	  if (values[i] < values[j])
 	    {
 	      t = values[i];
+	      t2 = months[i];
 	      values[i] = values[j];
+	      months[i] = months[j];
 	      values[j] = t;
+	      months[j] = t2;
 	    }
 	}
     }
   for (i = 0; i < 12; i++)
     {
-
       printf ("\n%s %.2f", months[i], values[i]);
     }
 
